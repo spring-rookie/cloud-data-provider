@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.thalesgroup.gts.pulse</groupId>
-    <artifactId>todos-api</artifactId>
+    <artifactId>todos</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>todos-api</name>
+    <name>todos</name>
     <description>Todos API</description>
 
     <parent>
