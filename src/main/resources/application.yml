@@ -7,8 +7,6 @@ spring:
       dev
 ---
 spring:
-  jackson:
-    time-zone: Europe/Bucharest
   profiles:
     dev
   jpa:
