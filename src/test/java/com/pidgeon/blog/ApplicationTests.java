@@ -1,4 +1,4 @@
-package com.pidgeon.todos;
+package com.pidgeon.blog;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

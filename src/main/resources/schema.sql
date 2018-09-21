@@ -1,21 +1,27 @@
-CREATE SCHEMA todos;
+CREATE SCHEMA blog;
 
-CREATE SEQUENCE todos.HIBERNATE_SEQUENCE
+CREATE SEQUENCE blog.HIBERNATE_SEQUENCE
   START WITH 1
   INCREMENT BY 1
   NO MINVALUE
   NO MAXVALUE
   CACHE 1;
 
-CREATE TABLE todos.todos (
+CREATE TABLE blog.posts (
   id BIGINT NOT NULL,
-  task VARCHAR(255),
+  title varchar(255) NOT NULL,
+  content TEXT,
+  created_at TIMESTAMP,
+  updated_at TIMESTAMP,
   PRIMARY KEY (id)
 );
 
-CREATE TABLE todos.chores (
+CREATE TABLE blog.comments (
   id BIGINT NOT NULL,
-  todo_id BIGINT NOT NULL,
-  description VARCHAR(255),
-  PRIMARY KEY (id)
+  content TEXT,
+  post_id BIGINT NOT NULL,
+  created_at TIMESTAMP,
+  updated_at TIMESTAMP,
+  PRIMARY KEY (id),
+  FOREIGN KEY (post_id) REFERENCES posts(id)
 );
