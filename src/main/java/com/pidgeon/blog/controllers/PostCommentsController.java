@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -32,9 +33,9 @@ public class PostCommentsController {
   }
 
   @RequestMapping(value = "", method = RequestMethod.GET)
-  public ResponseEntity<Iterable<Comment>> comments(@PathVariable Long postId) {
+  public List<Comment> comments(@PathVariable Long postId) {
     Optional<Post> p = postService.findById(postId);
 
-    return new ResponseEntity<>(p.get().getComments(), new HttpHeaders(), HttpStatus.OK);
+    return p.get().getComments();
   }
 }
