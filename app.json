@@ -2,7 +2,6 @@
   "name": "Blog's API",
   "description": "A beautiful RESTful Blog's API",
   "repository": "https://github.com/sarbull/blog-api",
-  "logo": "",
   "keywords": ["java", "spring", "heroku"],
   "image": "heroku/java"
 }
