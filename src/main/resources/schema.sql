@@ -12,3 +12,10 @@ CREATE TABLE todos.todos (
   task VARCHAR(255),
   PRIMARY KEY (id)
 );
+
+CREATE TABLE todos.chores (
+  id BIGINT NOT NULL,
+  todo_id BIGINT NOT NULL,
+  description VARCHAR(255),
+  PRIMARY KEY (id)
+);

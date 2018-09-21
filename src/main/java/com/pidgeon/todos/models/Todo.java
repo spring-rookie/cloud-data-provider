@@ -1,6 +1,8 @@
 package com.pidgeon.todos.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "todos")
@@ -9,6 +11,13 @@ public class Todo {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
   private String task;
+
+  @OneToMany(
+      cascade = CascadeType.ALL,
+      orphanRemoval = true
+  )
+  @JoinColumn(name = "todo_id")
+  private List<Chore> chores = new ArrayList<>();
 
   public long getId() {
     return id;
