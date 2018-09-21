@@ -72,6 +72,30 @@ public class TodosController {
     return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
 
+  @RequestMapping(value = "/{id}", method = RequestMethod.PATCH)
+  public ResponseEntity<Todo> updateTodo(@PathVariable Long id, @RequestBody Map<String, Object> fields) {
+    Optional<Todo> t = repository.findById(id);
+
+    fields.forEach((k, v) -> {
+      Field field = ReflectionUtils.findField(Todo.class, k);
+      field.setAccessible(true);
+
+      switch(field.getType().getSimpleName()) {
+        case "Chore":
+          t.get().setChore((Chore)v);
+          break;
+        default:
+          ReflectionUtils.setField(field, t.get(), v);
+          break;
+      }
+    });
+
+    repository.save(t.get());
+    Optional<Todo> savedT = repository.findById(id);
+
+    return new ResponseEntity<>(savedT.get(), new HttpHeaders(), HttpStatus.OK);
+  }
+  
   @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
   public ResponseEntity delete(@PathVariable long id) {
     repository.deleteById(id);
