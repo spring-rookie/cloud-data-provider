@@ -1,3 +1,3 @@
-# todos-api
+# blog-api
 
-Todo's API using Spring and JPA.
+Blog's API using Spring and JPA.
