@@ -1,13 +1,11 @@
-# blog-api
+# cloud-data-provider
 
 [![Build Status](https://api.travis-ci.org/sarbull/blog-api.svg?branch=master)](https://travis-ci.org/sarbull/blog-api)
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sarbull/blog-api/tree/master)
-
-Blog's API using Spring and JPA.
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/spring-rookie/cloud-data-provider/tree/master)
 
 # Demo
-[https://blog-api-2.herokuapp.com](https://blog-api-2.herokuapp.com/posts)
+[https://cloud-data-provider.herokuapp.com](https://cloud-data-provider.herokuapp.com/posts)
 
 # Tools
 - Swagger
